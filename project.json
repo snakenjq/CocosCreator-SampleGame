@@ -1,0 +1,8 @@
+{
+  "engine": "cocos2d-html5",
+  "packages": "packages",
+  "version": "2.4.2",
+  "name": "SimpleGame",
+  "id": "d059cccf-9ebe-4f15-9b1e-e169dc3038dd",
+  "isNew": false
+}
