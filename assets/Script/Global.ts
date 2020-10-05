@@ -2,8 +2,18 @@ const BOARD_ROW = 8;
 const BOARD_COL = 10;
 const GAME_COUNT_DOWN = 15;
 
-//修改动态合图散图的限制，默认512
-cc.dynamicAtlasManager.maxFrameSize = 720;
+if (
+  cc.sys.platform === cc.sys.IPHONE ||
+  cc.sys.platform === cc.sys.IPAD ||
+  cc.sys.platform === cc.sys.MACOS ||
+  cc.sys.platform === cc.sys.ANDROID ||
+  cc.sys.platform === cc.sys.DESKTOP_BROWSER ||
+  cc.sys.platform === cc.sys.MOBILE_BROWSER
+) {
+  cc.macro.CLEANUP_IMAGE_CACHE = false;
+  cc.dynamicAtlasManager.enabled = true;
+  cc.dynamicAtlasManager.maxFrameSize = 720;
+}
 
 const getBoardRow = (): number => {
   return BOARD_ROW;

@@ -34,7 +34,7 @@ export default class MainGameScene extends cc.Component {
       .getComponent(cc.Sprite);
 
     this._gameCountDown = cc
-      .find('Canvas/sp_timer/label_timer')
+      .find('Canvas/background/sp_timer/label_timer')
       .getComponent(cc.Label);
   }
 

@@ -1,2 +1,3 @@
-# hello-world
-Hello world new project template.
+# 消消乐
+
+一个简单的消消乐小游戏
