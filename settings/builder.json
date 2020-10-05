@@ -13,7 +13,7 @@
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": false,
   "mainCompressionType": "default",
-  "mainIsRemote": false,
+  "mainIsRemote": true,
   "optimizeHotUpdate": false,
   "md5Cache": true,
   "nativeMd5Cache": true,

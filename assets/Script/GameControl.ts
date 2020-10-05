@@ -471,8 +471,11 @@ export default class GameControl extends cc.Component {
     if (!anotherIconItem) return;
     let pos1 = oneIconItem.getPosition();
     let pos2 = anotherIconItem.getPosition();
+    anotherIconItem.zIndex = 1;
+    cc.log('anotherIconItem', oneIconItem.zIndex);
+    cc.log('anotherIconItem', anotherIconItem.zIndex);
     cc.tween(oneIconItem)
-      .to(0.5, { position: pos2 })
+      .to(0.3, { position: pos2 })
       .call(() => {
         let typeVal = oneIconData.iconType;
         oneIconData.iconType = anotherIconData.iconType;
@@ -481,9 +484,10 @@ export default class GameControl extends cc.Component {
         this.setIconNormalAnimObj(anotherIconData);
         oneIconItem.setPosition(pos1);
         anotherIconItem.setPosition(pos2);
+        anotherIconItem.zIndex = 0;
       })
       .start();
-    cc.tween(anotherIconItem).to(0.4, { position: pos1 }).start();
+    cc.tween(anotherIconItem).to(0.2, { position: pos1 }).start();
   }
 
   setIconAnimObj(obj: cc.Animation, name: string) {
