@@ -19,14 +19,17 @@ export default class StartMenuScene extends cc.Component {
   }
 
   onPlay() {
-    this.node.getComponent('SceneSwitch').fadeOut('main-game-scene', 0.5);
+    cc.assetManager.loadBundle(
+      'main-game-scene',
+      (err: any, bundle: cc.AssetManager.Bundle) => {
+        bundle.loadScene('main-game-scene', (err: any, scene: cc.Scene) => {
+          this.node.getComponent('SceneSwitch').fadeOutFromBundle(scene, 0.5);
+        });
+      },
+    );
   }
 
   logoAnim() {
     cc.tween(this.logo).to(0.5, { scale: 1, angle: 720 }).start();
-  }
-
-  onExitGame() {
-    cc.game.end();
   }
 }

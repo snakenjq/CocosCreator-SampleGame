@@ -9,6 +9,18 @@ export default class SceneSwitch extends cc.Component {
   @property(cc.Prefab)
   fadeNode: cc.Prefab = null;
 
+  fadeOutFromBundle(nextScene: cc.Scene, interval: number = 0.3) {
+    if (!this.fadeNode) return;
+    let fadeMaskNode = cc.instantiate(this.fadeNode);
+    fadeMaskNode.opacity = 0;
+    this.node.addChild(fadeMaskNode);
+    if (nextScene) {
+      this.fade(fadeMaskNode, interval, () => {
+        cc.director.runScene(nextScene);
+      });
+    }
+  }
+
   /**
    * 场景渐出
    * @param {string} nextScene 切换场景名
