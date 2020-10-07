@@ -45,12 +45,17 @@ export default class MainGameScene extends cc.Component {
 
   getRandomBackground() {
     let randomInt = getRandomInt(1, 6);
-    let bgSpriteFrameName = 'main-game-scene/background_' + randomInt;
-    cc.resources.load(
-      bgSpriteFrameName,
-      cc.SpriteFrame,
-      (err: any, spriteFrame: cc.SpriteFrame) => {
-        this._background.spriteFrame = spriteFrame;
+    let bgSpriteFrameName = 'background_' + randomInt;
+    cc.assetManager.loadBundle(
+      'background',
+      (err: any, bundle: cc.AssetManager.Bundle) => {
+        bundle.load(
+          bgSpriteFrameName,
+          cc.SpriteFrame,
+          (err: any, spriteFrame: cc.SpriteFrame) => {
+            this._background.spriteFrame = spriteFrame;
+          },
+        );
       },
     );
   }

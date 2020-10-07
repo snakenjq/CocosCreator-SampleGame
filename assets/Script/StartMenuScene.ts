@@ -12,6 +12,7 @@ export default class StartMenuScene extends cc.Component {
 
   start() {
     this.logoAnim();
+    cc.assetManager.loadBundle('background');
   }
 
   onDestroy() {

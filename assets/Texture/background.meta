@@ -1,9 +1,9 @@
 {
   "ver": "1.1.2",
-  "uuid": "739c46b5-a80c-4e15-b144-fbd9d1bf3e2f",
+  "uuid": "fdbb74a7-bedf-442f-b376-2b1930434b4d",
   "isBundle": true,
   "bundleName": "",
-  "priority": "2",
+  "priority": "1",
   "compressionType": {
     "wechatgame": "subpackage"
   },
