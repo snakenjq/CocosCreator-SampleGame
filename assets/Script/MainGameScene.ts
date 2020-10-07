@@ -1,4 +1,9 @@
-import { getRandomInt, getGameCountDown } from './Global';
+import {
+  getRandomInt,
+  getGameCountDown,
+  request,
+  ACCESS_TOKEN,
+} from './Global';
 
 const { ccclass, property } = cc._decorator;
 
@@ -13,6 +18,9 @@ export default class MainGameScene extends cc.Component {
   @property(cc.Node)
   gameOverBoard: cc.Node = null;
 
+  @property(cc.Label)
+  nameLabel: cc.Label = null;
+
   _countTimerNum: number = 0;
   @property({
     visible: false,
@@ -25,6 +33,8 @@ export default class MainGameScene extends cc.Component {
     this._countTimerNum = value;
     this._gameCountDown.string = this._countTimerNum + '';
   }
+
+  userName: string = '';
 
   onLoad() {
     this.node.getComponent('SceneSwitch').fadeIn(0.5);
@@ -41,6 +51,7 @@ export default class MainGameScene extends cc.Component {
   start() {
     this.getRandomBackground();
     this.refreshSchedule();
+    this.requestUserInfo();
   }
 
   getRandomBackground() {
@@ -91,5 +102,19 @@ export default class MainGameScene extends cc.Component {
 
   backToStartScene() {
     this.node.getComponent('SceneSwitch').fadeOut('start-menu-scene', 0.5);
+  }
+
+  requestUserInfo() {
+    request({
+      url: 'http://localhost:3000/account/',
+      method: 'GET',
+      authorization: ACCESS_TOKEN,
+      success: (res: any) => {
+        this.nameLabel.string = res.user.nickName;
+      },
+      error: (res: any) => {
+        cc.log(res);
+      },
+    });
   }
 }
