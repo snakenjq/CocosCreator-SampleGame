@@ -1,0 +1,38 @@
+{
+  "name": "assetutility",
+  "version": "1.0.2",
+  "description": "The package template for getting started.",
+  "author": "Cocos Creator",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.package.title/万能引用查询/查找引用": {
+      "message": "assetutility:find-reference",
+      "icon": "./res/search.png",
+      "accelerator": "F3"
+    },
+    "i18n:MAIN_MENU.package.title/万能引用查询/资源清理/查找无用图片": {
+      "message": "assetutility:find-unused",
+      "icon": "./res/search.png"
+    },
+    "i18n:MAIN_MENU.package.title/万能引用查询/资源清理/删除无用图片": {
+      "message": "assetutility:find-unused-and-del",
+      "icon": "./res/clear.png"
+    },
+    "i18n:MAIN_MENU.package.title/万能引用查询/资源清理/设置忽略路径": {
+      "message": "assetutility:set-ignore-path",
+      "icon": "./res/setting.png"
+    }
+  },
+  "i18n:MAIN_MENU.package.title/万能引用查询/test": {
+    "测试用": "需要移到 main-menu",
+    "message": "assetutility:test-node"
+  },
+  "panel": {
+    "main": "panel/index.js",
+    "type": "dockable",
+    "title": "Asset Utility",
+    "width": 640,
+    "height": 520
+  },
+  "scene-script": "scene.js"
+}

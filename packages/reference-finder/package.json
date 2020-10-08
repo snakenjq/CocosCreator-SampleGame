@@ -1,0 +1,20 @@
+{
+  "name": "reference-finder",
+  "version": "1.0.0",
+  "description": "查找资源的引用状态",
+  "author": "Nathan.Niu",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.package.title/i18n:reference-finder.title/i18n:reference-finder.search": {
+      "message": "reference-finder:search"
+    }
+  },
+  "panel": {
+    "main": "panel/index.js",
+    "type": "dockable",
+    "title": "i18n:reference-finder.title",
+    "width": 640,
+    "height": 520
+  },
+  "scene-script": "finder.js"
+}
