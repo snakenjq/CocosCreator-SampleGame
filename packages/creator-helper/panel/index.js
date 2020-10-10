@@ -22,9 +22,18 @@ Editor.Panel.extend({
             },
             data: {
                 defaultCfg: {
-                    docs: {name: "文档", url: "http://docs.cocos.com/creator/manual/zh/"},
-                    forum: {name: "论坛", url: "http://forum.cocos.com/c/Creator"},
-                    baidu: {name: "百度", url: "http://www.baidu.com"}
+                    docs: {
+                        name: "文档",
+                        url: "http://docs.cocos.com/creator/manual/zh/"
+                    },
+                    forum: {
+                        name: "论坛",
+                        url: "http://forum.cocos.com/c/Creator"
+                    },
+                    baidu: {
+                        name: "百度",
+                        url: "http://www.baidu.com"
+                    }
                 },
                 webUrl: "http://docs.cocos.com/creator/manual/zh/",
                 curSelectUrl: '',

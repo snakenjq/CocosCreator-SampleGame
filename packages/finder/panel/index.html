@@ -1,0 +1,20 @@
+<div>
+    <span>{{topInfo}}</span>
+</div>
+<hr />
+<div>
+    <span style="color:#00ffff;">{{pathInfo}}</span>
+    <div v-if="showReference">
+        <br>
+        <span style="color: beige;"> 引用信息:</span>
+        <br>
+        <template v-for="item in referenceInfos">
+            <span>{{item.info}}</span>
+            <ui-button @click="onClick($event,item.uuid)" class="blue transparent" style="position: relative;top: 8px;">
+                <i class="icon-eye"></i></ui-button>
+            <br>
+        </template>
+
+    </div>
+</div>
+<hr />

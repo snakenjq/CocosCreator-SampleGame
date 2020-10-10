@@ -1,0 +1,25 @@
+{
+  "name": "finder",
+  "version": "1.0.0",
+  "description": "查找节点引用插件",
+  "author": "Nathan.Niu",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.package.title/finder/search": {
+      "message": "finder:open",
+      "accelerator": "F1"
+    },
+    "i18n:MAIN_MENU.package.title/finder/hello": {
+      "message": "finder:say-hello",
+      "accelerator": "F2"
+    }
+  },
+  "panel": {
+    "main": "panel/index.js",
+    "type": "dockable",
+    "title": "查找引用",
+    "width": 600,
+    "height": 520
+  },
+  "scene-script": "search.js"
+}
